@@ -43,6 +43,9 @@ module.exports = function(grunt) {
             }
         },
         watch: {
+            options: {
+                livereload: true,
+            },
             webfont: {
                 files: 'font-icons/src/*.svg',
                 tasks: ['webfont', 'sass']
@@ -62,5 +65,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['webfont', 'sass', 'handlebars', 'watch']);
 };
